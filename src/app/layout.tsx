@@ -25,8 +25,11 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "FIT RED | Built Different - Premier Gym & Fitness Club",
-  description: "High intensity strength facilities built for modern athletes, lifters, and total transformations. Join the premier fitness community in 18+ locations.",
+  title: "Boot Camp Gym | Built Different - Premier Gym & Fitness Club",
+  description: "High intensity strength facilities built for modern athletes, lifters, and total transformations. Join the premier Boot Camp Gym community in 18+ locations.",
+  icons: {
+    icon: "/boot-camp-logo.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
