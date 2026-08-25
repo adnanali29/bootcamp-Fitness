@@ -7,7 +7,7 @@ export default function Hero() {
   const { openMembershipModal } = useApp();
 
   return (
-    <section id="hero" className="relative min-h-[calc(100vh-104px)] flex items-center pt-8 pb-16 overflow-hidden">
+    <section id="hero" className="relative min-h-[calc(100vh-88px)] flex items-start md:items-center pt-6 md:pt-8 pb-16 overflow-hidden">
       {/* Background Images */}
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
         {/* Mobile Background */}
@@ -30,7 +30,7 @@ export default function Hero() {
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 bg-brand-red/15 rounded-full blur-[120px] pointer-events-none z-10"></div>
 
       {/* Hero Content */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center justify-center text-center transform -translate-y-12 md:-translate-y-24">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center justify-center text-center">
         <div className="max-w-3xl mx-auto">
           {/* Main Heading matching image standard */}
           <h1 className="font-display text-6xl sm:text-7xl lg:text-9xl font-black text-white leading-none tracking-tight mb-4 text-center">
