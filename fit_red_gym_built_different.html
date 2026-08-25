@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIT RED | Built Different - Premier Gym & Fitness Club</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#ff1e27',
+                            redDark: '#cc0e15',
+                            redGlow: '#ff3b43',
+                            dark: '#0a0a0c',
+                            card: '#121216',
+                            cardBorder: '#22222a',
+                            subtext: '#9ca3af'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Bebas Neue', 'Oswald', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'neon': '0 0 25px rgba(255, 30, 39, 0.4)',
+                        'neon-lg': '0 0 40px rgba(255, 30, 39, 0.6)',
+                        'card': '0 10px 30px -10px rgba(0,0,0,0.8)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #0a0a0c;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .font-oswald {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        /* Glassmorphism elements */
+        .glass-panel {
+            background: rgba(18, 18, 22, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-panel-red {
+            background: rgba(255, 30, 39, 0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 30, 39, 0.3);
+        }
+
+        /* Red Accent Glowing Text */
+        .glow-text {
+            text-shadow: 0 0 15px rgba(255, 30, 39, 0.7);
+        }
+
+        /* Video Gradient Overlay */
+        .hero-overlay {
+            background: linear-gradient(180deg, 
+                rgba(10, 10, 12, 0.7) 0%, 
+                rgba(10, 10, 12, 0.4) 50%, 
+                rgba(10, 10, 12, 1) 100%),
+                radial-gradient(circle at center, rgba(255, 30, 39, 0.15) 0%, transparent 70%);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #26262e;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff1e27;
+        }
+
+        /* Pulse light animation */
+        @keyframes subtlePulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.03); }
+        }
+        .animate-pulse-glow {
+            animation: subtlePulse 4s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-red selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-brand-dark/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-brand-red rounded-lg flex items-center justify-center text-black font-black text-2xl group-hover:bg-white transition-colors shadow-neon">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display text-3xl tracking-wider text-white leading-none">FIT<span class="text-brand-red">RED</span></span>
+                    <span class="text-[9px] uppercase tracking-[0.25em] text-gray-400 font-semibold leading-none mt-1">BUILT DIFFERENT</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium uppercase tracking-wider text-gray-300">
+                <a href="#hero" class="hover:text-brand-red transition-colors py-2 text-white">Home</a>
+                <a href="#programs" class="hover:text-brand-red transition-colors py-2">Programs</a>
+                <a href="#transformations" class="hover:text-brand-red transition-colors py-2">Results</a>
+                <a href="#schedule" class="hover:text-brand-red transition-colors py-2">Schedule</a>
+                <a href="#trainers" class="hover:text-brand-red transition-colors py-2">Trainers</a>
+                <a href="#locations" class="hover:text-brand-red transition-colors py-2">Locations</a>
+                <a href="#pricing" class="hover:text-brand-red transition-colors py-2">Plans</a>
+                <a href="#franchise" class="hover:text-brand-red transition-colors py-2">Franchise</a>
+                <a href="#contact" class="hover:text-brand-red transition-colors py-2">Contact</a>
+            </nav>
+
+            <!-- CTA Button & Mobile Menu Toggle -->
+            <div class="flex items-center gap-4">
+                <button onclick="openModal('membershipModal')" class="hidden sm:inline-flex items-center gap-2 bg-brand-red hover:bg-brand-redDark text-white font-bold px-6 py-2.5 rounded-lg text-sm uppercase tracking-wider transition-all duration-300 shadow-neon hover:shadow-neon-lg transform hover:-translate-y-0.5">
+                    <span>Join Club</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </button>
+
+                <button id="mobile-menu-btn" class="lg:hidden text-2xl text-white focus:outline-none p-2">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-dark/95 border-b border-brand-cardBorder px-6 py-6 transition-all">
+            <div class="flex flex-col space-y-4 text-sm font-medium uppercase tracking-wider text-gray-300">
+                <a href="#hero" class="mobile-link py-2 hover:text-brand-red">Home</a>
+                <a href="#programs" class="mobile-link py-2 hover:text-brand-red">Programs</a>
+                <a href="#transformations" class="mobile-link py-2 hover:text-brand-red">Results</a>
+                <a href="#schedule" class="mobile-link py-2 hover:text-brand-red">Schedule</a>
+                <a href="#trainers" class="mobile-link py-2 hover:text-brand-red">Trainers</a>
+                <a href="#locations" class="mobile-link py-2 hover:text-brand-red">Locations</a>
+                <a href="#pricing" class="mobile-link py-2 hover:text-brand-red">Plans</a>
+                <a href="#franchise" class="mobile-link py-2 hover:text-brand-red">Franchise</a>
+                <a href="#contact" class="mobile-link py-2 hover:text-brand-red">Contact</a>
+                <button onclick="openModal('membershipModal')" class="w-full bg-brand-red hover:bg-brand-redDark text-white font-bold py-3 rounded-lg text-center uppercase tracking-wider shadow-neon mt-2">
+                    Join The Club
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION WITH VIDEO BACKGROUND -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+        
+        <!-- Video Background -->
+        <div class="absolute inset-0 w-full h-full overflow-hidden z-0">
+            <video class="w-full h-full object-cover scale-105" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1920">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-man-training-with-battle-ropes-in-a-gym-42793-large.mp4" type="video/mp4">
+            </video>
+            <!-- Overlay gradient -->
+            <div class="absolute inset-0 hero-overlay z-10"></div>
+        </div>
+
+        <!-- Ambient Glow Effects -->
+        <div class="absolute top-1/3 left-10 w-96 h-96 bg-brand-red/20 rounded-full blur-[120px] pointer-events-none z-10"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-brand-red/10 rounded-full blur-[100px] pointer-events-none z-10"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
+            <div class="max-w-3xl">
+                
+                <!-- Tagline Badge -->
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-red/15 border border-brand-red/40 mb-6 backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-brand-red animate-ping"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-red">Real People. Real Training. Zero Excuses.</span>
+                </div>
+
+                <!-- Main Heading matching image standard -->
+                <h1 class="font-display text-6xl sm:text-7xl lg:text-9xl font-black text-white leading-none tracking-tight mb-4">
+                    BUILT <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-red-500 to-white glow-text">DIFFERENT.</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-lg sm:text-xl text-gray-300 font-normal leading-relaxed mb-8 max-w-xl">
+                    High intensity strength facilities built for modern athletes, lifters, and total transformations. Join the premier fitness community in 18+ locations.
+                </p>
+
+                <!-- Hero Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                    <button onclick="openModal('membershipModal')" class="bg-brand-red hover:bg-brand-redDark text-white font-black px-8 py-4 rounded-xl text-base uppercase tracking-wider shadow-neon hover:shadow-neon-lg transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                        <span>JOIN THE CLUB</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <a href="#programs" class="glass-panel hover:bg-white/10 text-white font-bold px-8 py-4 rounded-xl text-base uppercase tracking-wider transition-all flex items-center justify-center gap-3 border border-white/20">
+                        <span>EXPLORE PROGRAMS</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Quick Stats Strip (from image design) -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-white/15">
+                    <div class="flex items-center gap-3">
+                        <div class="text-brand-red text-2xl font-black"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <div class="font-display text-2xl text-white leading-none">18+</div>
+                            <div class="text-xs text-gray-400 font-medium uppercase mt-0.5">Clubs Worldwide</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="text-brand-red text-2xl font-black"><i class="fa-solid fa-users"></i></div>
+                        <div>
+                            <div class="font-display text-2xl text-white leading-none">12K+</div>
+                            <div class="text-xs text-gray-400 font-medium uppercase mt-0.5">Active Members</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="text-brand-red text-2xl font-black"><i class="fa-solid fa-certificate"></i></div>
+                        <div>
+                            <div class="font-display text-2xl text-white leading-none">100%</div>
+                            <div class="text-xs text-gray-400 font-medium uppercase mt-0.5">Pro Trainers</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="text-brand-red text-2xl font-black"><i class="fa-solid fa-clock"></i></div>
+                        <div>
+                            <div class="font-display text-2xl text-white leading-none">24/7</div>
+                            <div class="text-xs text-gray-400 font-medium uppercase mt-0.5">Facility Access</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMS SECTION -->
+    <section id="programs" class="py-24 bg-brand-dark relative z-10 border-t border-brand-cardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand-red font-bold text-xs uppercase tracking-[0.2em] block mb-2">SPECIALTIES</span>
+                    <h2 class="font-display text-4xl sm:text-6xl text-white uppercase tracking-tight">
+                        CHOOSE YOUR <span class="text-brand-red">MISSION</span>
+                    </h2>
+                </div>
+                <p class="text-gray-400 text-sm max-w-md mt-4 md:mt-0">
+                    Engineered workout systems tailored to break through plateaus and deliver physique performance.
+                </p>
+            </div>
+
+            <!-- Program Category Filter Buttons -->
+            <div class="flex flex-wrap gap-2 mb-8" id="program-filters">
+                <button onclick="filterPrograms('all')" class="prog-filter-btn active bg-brand-red text-white px-5 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all">All Programs</button>
+                <button onclick="filterPrograms('strength')" class="prog-filter-btn bg-brand-card text-gray-400 hover:text-white border border-brand-cardBorder px-5 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all">Strength & Power</button>
+                <button onclick="filterPrograms('hiit')" class="prog-filter-btn bg-brand-card text-gray-400 hover:text-white border border-brand-cardBorder px-5 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all">Fat Loss / Boot Camp</button>
+                <button onclick="filterPrograms('hypertrophy')" class="prog-filter-btn bg-brand-card text-gray-400 hover:text-white border border-brand-cardBorder px-5 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all">Muscle Building</button>
+                <button onclick="filterPrograms('boxing')" class="prog-filter-btn bg-brand-card text-gray-400 hover:text-white border border-brand-cardBorder px-5 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all">Conditioning</button>
+            </div>
+
+            <!-- Programs Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="programs-grid">
+                
+                <!-- Card 1: Strength Training -->
+                <div class="program-card strength group relative bg-brand-card rounded-2xl overflow-hidden border border-brand-cardBorder hover:border-brand-red transition-all duration-300 shadow-card">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=800" alt="Strength Training" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-brand-card/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-brand-red border border-brand-red/30">
+                            STRENGTH & POWER
+                        </div>
+                    </div>
+                    <div class="p-6 relative">
+                        <h3 class="font-display text-2xl text-white mb-2 group-hover:text-brand-red transition-colors">STRENGTH & HYPERTROPHY</h3>
+                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">Progressive overload barbell work, heavy compound lifts, and periodized strength programming for raw power.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-white/5">
+                            <span class="text-xs text-gray-400"><i class="fa-solid fa-fire text-brand-red mr-1"></i> High Intensity</span>
+                            <button onclick="showProgramDetail('Strength & Hypertrophy', 'A focused, progressive powerlifting and bodybuilding protocol designed to maximize squat, bench, deadlift and muscular hypertrophy under expert supervision.')" class="text-brand-red font-bold text-xs uppercase tracking-wider flex items-center gap-2 hover:underline">
+                                <span>Explore</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Fat Loss Boot Camp -->
+                <div class="program-card hiit group relative bg-brand-card rounded-2xl overflow-hidden border border-brand-cardBorder hover:border-brand-red transition-all duration-300 shadow-card">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800" alt="Fat Loss Boot Camp" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-brand-card/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-brand-red border border-brand-red/30">
+                            FAT LOSS
+                        </div>
+                    </div>
+                    <div class="p-6 relative">
+                        <h3 class="font-display text-2xl text-white mb-2 group-hover:text-brand-red transition-colors">FAT LOSS BOOT CAMP</h3>
+                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">High calorie burn group sessions incorporating battle ropes, kettlebells, rowing, and cardiovascular intervals.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-white/5">
+                            <span class="text-xs text-gray-400"><i class="fa-solid fa-bolt text-brand-red mr-1"></i> Max Calorie Burn</span>
+                            <button onclick="showProgramDetail('Fat Loss Boot Camp', 'Dynamic group conditioning utilizing HIIT principles, metabolic conditioning, and real-time heart rate monitoring to strip fat fast.')" class="text-brand-red font-bold text-xs uppercase tracking-wider flex items-center gap-2 hover:underline">
+                                <span>Explore</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Muscle Building -->
+                <div class="program-card hypertrophy group relative bg-brand-card rounded-2xl overflow-hidden border border-brand-cardBorder hover:border-brand-red transition-all duration-300 shadow-card">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&q=80&w=800" alt="Muscle Building" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-brand-card/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-brand-red border border-brand-red/30">
+                            BODYBUILDING
+                        </div>
+                    </div>
+                    <div class="p-6 relative">
+                        <h3 class="font-display text-2xl text-white mb-2 group-hover:text-brand-red transition-colors">PURE MUSCLE REBUILD</h3>
+                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">Isolation techniques, mechanical tension focus, and nutritional coaching for aesthetic lean muscle gains.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-white/5">
+                            <span class="text-xs text-gray-400"><i class="fa-solid fa-dumbbell text-brand-red mr-1"></i> Hypertrophy</span>
+                            <button onclick="showProgramDetail('Pure Muscle Rebuild', 'Build a symmetrical, lean physique with custom hypertrophy split routines and dedicated macro nutrient planning.')" class="text-brand-red font-bold text-xs uppercase tracking-wider flex items-center gap-2 hover:underline">
+                                <span>Explore</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Conditioning & Boxing -->
+                <div class="program-card boxing group relative bg-brand-card rounded-2xl overflow-hidden border border-brand-cardBorder hover:border-brand-red transition-all duration-300 shadow-card">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&q=80&w=800" alt="Combat & Boxing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-brand-card/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-brand-red border border-brand-red/30">
+                            COMBAT & ENDURANCE
+                        </div>
+                    </div>
+                    <div class="p-6 relative">
+                        <h3 class="font-display text-2xl text-white mb-2 group-hover:text-brand-red transition-colors">BOXING & ATHLETIC CONDITIONING</h3>
+                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">Heavy bag combinations, agility ladder work, core stability, and fighter-level conditioning drills.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-white/5">
+                            <span class="text-xs text-gray-400"><i class="fa-solid fa-mitten text-brand-red mr-1"></i> Combat Conditioning</span>
+                            <button onclick="showProgramDetail('Boxing & Athletic Conditioning', 'Unleash your inner fighter with heavy bag rounds, mitt work, footwork drills, and intense cardiovascular rounds.')" class="text-brand-red font-bold text-xs uppercase tracking-wider flex items-center gap-2 hover:underline">
+                                <span>Explore</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: 1-on-1 Personal Training -->
+                <div class="program-card strength group relative bg-brand-card rounded-2xl overflow-hidden border border-brand-cardBorder hover:border-brand-red transition-all duration-300 shadow-card">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800" alt="1 on 1 Coaching" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-brand-card/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-brand-red border border-brand-red/30">
+                            PERSONAL COACHING
+                        </div>
+                    </div>
+                    <div class="p-6 relative">
+                        <h3 class="font-display text-2xl text-white mb-2 group-hover:text-brand-red transition-colors">1-ON-1 ELITE COACHING</h3>
+                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">Dedicated personal trainer customized around your schedule, body composition goals, and rehab needs.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-white/5">
+                            <span class="text-xs text-gray-400"><i class="fa-solid fa-user-check text-brand-red mr-1"></i> Fully Customized</span>
+                            <button onclick="showProgramDetail('1-on-1 Elite Coaching', 'Get bespoke program design, private gym floor coaching, bi-weekly body composition scans, and 24/7 trainer access.')" class="text-brand-red font-bold text-xs uppercase tracking-wider flex items-center gap-2 hover:underline">
+                                <span>Explore</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Mobility & Recovery -->
+                <div class="program-card hiit group relative bg-brand-card rounded-2xl overflow-hidden border border-brand-cardBorder hover:border-brand-red transition-all duration-300 shadow-card">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800" alt="Mobility and Recovery" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-brand-card/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-brand-red border border-brand-red/30">
+                            RECOVERY
+                        </div>
+                    </div>
+                    <div class="p-6 relative">
+                        <h3 class="font-display text-2xl text-white mb-2 group-hover:text-brand-red transition-colors">MOBILITY & ICE BATH RECOVERY</h3>
+                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">Active recovery, fascial stretch therapy, cold plunge, and sauna protocols to maximize muscular repair.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-white/5">
+                            <span class="text-xs text-gray-400"><i class="fa-solid fa-heart-pulse text-brand-red mr-1"></i> Accelerated Recovery</span>
+                            <button onclick="showProgramDetail('Mobility & Ice Bath Recovery', 'Prevent injury and boost performance with targeted mobility sessions, sauna therapy, and contrast cold plunges.')" class="text-brand-red font-bold text-xs uppercase tracking-wider flex items-center gap-2 hover:underline">
+                                <span>Explore</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- REAL PEOPLE REAL RESULTS SECTION -->
+    <section id="transformations" class="py-24 bg-black relative z-10 border-t border-brand-cardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Details Column -->
+                <div class="lg:col-span-5">
+                    <span class="text-brand-red font-bold text-xs uppercase tracking-[0.2em] block mb-2">PROOF OF PROGRESS</span>
+                    <h2 class="font-display text-4xl sm:text-6xl text-white uppercase tracking-tight mb-6">
+                        REAL PEOPLE. <br/>
+                        <span class="text-brand-red">REAL RESULTS.</span>
+                    </h2>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                        We don't offer quick fixes or empty promises. Our members put in the work with our structured training and precision nutrition to build lifelong physique transformations.
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-brand-card border border-brand-cardBorder">
+                            <div class="w-12 h-12 rounded-lg bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red font-black text-xl">
+                                -24<span class="text-xs">LBS</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Average Fat Loss</h4>
+                                <p class="text-xs text-gray-400">Achieved during our 12-Week Transformation Program</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-brand-card border border-brand-cardBorder">
+                            <div class="w-12 h-12 rounded-lg bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red font-black text-xl">
+                                +15%
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Strength Increase</h4>
+                                <p class="text-xs text-gray-400">Average gain in compound lifts within 60 days</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('membershipModal')" class="bg-brand-red hover:bg-brand-redDark text-white font-bold px-8 py-3.5 rounded-xl text-sm uppercase tracking-wider shadow-neon transition-all">
+                        Start Your Transformation
+                    </button>
+                </div>
+
+                <!-- Right Visual Before/After Showcase -->
+                <div class="lg:col-span-7">
+                    <div class="bg-brand-card border border-brand-cardBorder rounded-3xl p-6 sm:p-8 relative overflow-hidden">
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                            <!-- Before Box -->
+                            <div class="relative rounded-2xl overflow-hidden border border-white/10 group">
+                                <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&q=80&w=600" alt="Before Transformation" class="w-full h-80 object-cover">
+                                <div class="absolute top-4 left-4 bg-black/80 px-3 py-1 rounded-full text-xs font-bold text-gray-300 uppercase tracking-widest border border-white/10">
+                                    DAY 1
+                                </div>
+                                <div class="absolute bottom-4 left-4 right-4 bg-black/80 backdrop-blur-md p-3 rounded-xl border border-white/10">
+                                    <div class="text-xs font-bold text-gray-400">Body Fat: 28%</div>
+                                    <div class="text-sm font-bold text-white">Weight: 215 lbs</div>
+                                </div>
+                            </div>
+
+                            <!-- After Box -->
+                            <div class="relative rounded-2xl overflow-hidden border border-brand-red/50 shadow-neon group">
+                                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&q=80&w=600" alt="After Transformation" class="w-full h-80 object-cover">
+                                <div class="absolute top-4 left-4 bg-brand-red px-3 py-1 rounded-full text-xs font-bold text-white uppercase tracking-widest shadow-neon">
+                                    WEEK 12
+                                </div>
+                                <div class="absolute bottom-4 left-4 right-4 bg-brand-dark/90 backdrop-blur-md p-3 rounded-xl border border-brand-red/30">
+                                    <div class="text-xs font-bold text-brand-red">Body Fat: 11%</div>
+                                    <div class="text-sm font-bold text-white">Weight: 184 lbs (-31 lbs)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial Quote -->
+                        <div class="bg-brand-dark/60 p-5 rounded-2xl border border-white/5 flex items-start gap-4">
+                            <div class="text-brand-red text-3xl font-serif">“</div>
+                            <div>
+                                <p class="text-sm text-gray-300 italic mb-2">
+                                    "FIT RED completely shifted my mindset. The coaches pushed me past what I thought was possible. In 12 weeks I dropped 31lbs and built more strength than in 5 years of solo gym training."
+                                </p>
+                                <div class="text-xs font-bold text-white uppercase tracking-wider">— Marcus Vance, Member since 2024</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHEDULE SECTION -->
+    <section id="schedule" class="py-24 bg-brand-dark relative z-10 border-t border-brand-cardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <span class="text-brand-red font-bold text-xs uppercase tracking-[0.2em] block mb-2">TIMETABLE</span>
+                    <h2 class="font-display text-4xl sm:text-6xl text-white uppercase tracking-tight">
+                        TRAIN ON <span class="text-brand-red">YOUR TIME</span>
+                    </h2>
+                </div>
+                <p class="text-gray-400 text-sm max-w-md mt-4 md:mt-0">
+                    Daily coached sessions running from 5:30 AM to 9:00 PM. Reserve your spot in advance.
+                </p>
+            </div>
+
+            <!-- Day Tabs -->
+            <div class="flex overflow-x-auto gap-2 pb-4 mb-6 no-scrollbar" id="day-tabs">
+                <button onclick="switchDay('mon')" class="day-tab active bg-brand-red text-white px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider min-w-[110px] text-center transition-all">Mon</button>
+                <button onclick="switchDay('tue')" class="day-tab bg-brand-card text-gray-400 hover:text-white border border-brand-cardBorder px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider min-w-[110px] text-center transition-all">Tue</button>
+                <button onclick="switchDay('wed')" class="day-tab bg-brand-card text-gray-400 hover:text-white border border-brand-cardBorder px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider min-w-[110px] text-center transition-all">Wed</button>
+                <button onclick="switchDay('thu')" class="day-tab bg-brand-card text-gray-400 hover:text-white border border-brand-cardBorder px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider min-w-[110px] text-center transition-all">Thu</button>
+                <button onclick="switchDay('fri')" class="day-tab bg-brand-card text-gray-400 hover:text-white border border-brand-cardBorder px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider min-w-[110px] text-center transition-all">Fri</button>
+                <button onclick="switchDay('sat')" class="day-tab bg-brand-card text-gray-400 hover:text-white border border-brand-cardBorder px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider min-w-[110px] text-center transition-all">Sat</button>
+                <button onclick="switchDay('sun')" class="day-tab bg-brand-card text-gray-400 hover:text-white border border-brand-cardBorder px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider min-w-[110px] text-center transition-all">Sun</button>
+            </div>
+
+            <!-- Schedule Table / Card List -->
+            <div class="bg-brand-card border border-brand-cardBorder rounded-2xl overflow-hidden shadow-card">
+                <div class="divide-y divide-brand-cardBorder" id="schedule-container">
+                    <!-- Schedule items dynamically loaded via JS -->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TRAINERS SECTION -->
+    <section id="trainers" class="py-24 bg-black relative z-10 border-t border-brand-cardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-red font-bold text-xs uppercase tracking-[0.2em] block mb-2">WORLD-CLASS COACHES</span>
+                <h2 class="font-display text-4xl sm:text-6xl text-white uppercase tracking-tight mb-4">
+                    EXPERTS WHO <span class="text-brand-red">BUILD YOU</span>
+                </h2>
+                <p class="text-gray-400 text-sm">
+                    Certified master trainers, former competitive athletes, and strength specialists dedicated to bringing out your peak physical potential.
+                </p>
+            </div>
+
+            <!-- Trainers Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Trainer 1 -->
+                <div class="bg-brand-card rounded-2xl overflow-hidden border border-brand-cardBorder group hover:border-brand-red transition-all duration-300">
+                    <div class="h-80 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&q=80&w=600" alt="Coach Victor Vance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                        <!-- Social hover badge -->
+                        <div class="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <a href="#" class="w-8 h-8 rounded-full bg-black/80 hover:bg-brand-red flex items-center justify-center text-white text-xs transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-black/80 hover:bg-brand-red flex items-center justify-center text-white text-xs transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <span class="text-xs font-bold text-brand-red uppercase tracking-wider">HEAD OF STRENGTH</span>
+                        <h3 class="font-display text-2xl text-white mt-1 mb-1">VICTOR "THE TANK" VANCE</h3>
+                        <p class="text-xs text-gray-400 mb-4">CSCS, Powerlifting Specialist (10+ Yrs Exp)</p>
+                        <button onclick="openBookingModal('Victor Vance')" class="w-full py-2 bg-brand-dark hover:bg-brand-red text-white text-xs font-bold uppercase tracking-wider rounded-lg border border-brand-cardBorder transition-colors">
+                            Book Session
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trainer 2 -->
+                <div class="bg-brand-card rounded-2xl overflow-hidden border border-brand-cardBorder group hover:border-brand-red transition-all duration-300">
+                    <div class="h-80 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?auto=format&fit=crop&q=80&w=600" alt="Coach Elena Rostova" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                        <div class="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <a href="#" class="w-8 h-8 rounded-full bg-black/80 hover:bg-brand-red flex items-center justify-center text-white text-xs transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-black/80 hover:bg-brand-red flex items-center justify-center text-white text-xs transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <span class="text-xs font-bold text-brand-red uppercase tracking-wider">HIIT & CONDITIONING COACH</span>
+                        <h3 class="font-display text-2xl text-white mt-1 mb-1">ELENA ROSTOVA</h3>
+                        <p class="text-xs text-gray-400 mb-4">NASM CPT, Olympic Lifting Coach</p>
+                        <button onclick="openBookingModal('Elena Rostova')" class="w-full py-2 bg-brand-dark hover:bg-brand-red text-white text-xs font-bold uppercase tracking-wider rounded-lg border border-brand-cardBorder transition-colors">
+                            Book Session
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trainer 3 -->
+                <div class="bg-brand-card rounded-2xl overflow-hidden border border-brand-cardBorder group hover:border-brand-red transition-all duration-300">
+                    <div class="h-80 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="Coach Sarah Jenkins" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                        <div class="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <a href="#" class="w-8 h-8 rounded-full bg-black/80 hover:bg-brand-red flex items-center justify-center text-white text-xs transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <span class="text-xs font-bold text-brand-red uppercase tracking-wider">PHYSIQUE & NUTRITION</span>
+                        <h3 class="font-display text-2xl text-white mt-1 mb-1">SARAH JENKINS</h3>
+                        <p class="text-xs text-gray-400 mb-4">Pro IFBB Athlete, Macro Specialist</p>
+                        <button onclick="openBookingModal('Sarah Jenkins')" class="w-full py-2 bg-brand-dark hover:bg-brand-red text-white text-xs font-bold uppercase tracking-wider rounded-lg border border-brand-cardBorder transition-colors">
+                            Book Session
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trainer 4 -->
+                <div class="bg-brand-card rounded-2xl overflow-hidden border border-brand-cardBorder group hover:border-brand-red transition-all duration-300">
+                    <div class="h-80 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=600" alt="Coach Marcus Sterling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                        <div class="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <a href="#" class="w-8 h-8 rounded-full bg-black/80 hover:bg-brand-red flex items-center justify-center text-white text-xs transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <span class="text-xs font-bold text-brand-red uppercase tracking-wider">BOXING & AGILITY</span>
+                        <h3 class="font-display text-2xl text-white mt-1 mb-1">MARCUS STERLING</h3>
+                        <p class="text-xs text-gray-400 mb-4">Golden Gloves Champion, Combat Conditioning</p>
+                        <button onclick="openBookingModal('Marcus Sterling')" class="w-full py-2 bg-brand-dark hover:bg-brand-red text-white text-xs font-bold uppercase tracking-wider rounded-lg border border-brand-cardBorder transition-colors">
+                            Book Session
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATIONS SECTION -->
+    <section id="locations" class="py-24 bg-brand-dark relative z-10 border-t border-brand-cardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand-red font-bold text-xs uppercase tracking-[0.2em] block mb-2">CLUB NETWORK</span>
+                    <h2 class="font-display text-4xl sm:text-6xl text-white uppercase tracking-tight">
+                        FIND YOUR <span class="text-brand-red">NEAREST CLUB</span>
+                    </h2>
+                </div>
+                <div class="mt-4 md:mt-0 flex gap-2">
+                    <input type="text" id="locationSearch" onkeyup="filterLocations()" placeholder="Search city or zip code..." class="bg-brand-card border border-brand-cardBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red w-64">
+                </div>
+            </div>
+
+            <!-- Locations Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="locations-grid">
+                
+                <!-- Location Item 1 -->
+                <div class="location-card bg-brand-card rounded-2xl border border-brand-cardBorder p-6 flex flex-col justify-between hover:border-brand-red transition-all shadow-card">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold uppercase px-2.5 py-1 rounded bg-brand-red/10 text-brand-red border border-brand-red/20">24/7 OPEN</span>
+                            <span class="text-xs text-gray-400"><i class="fa-solid fa-location-dot text-brand-red mr-1"></i> Downtown Metro</span>
+                        </div>
+                        <h3 class="font-display text-2xl text-white mb-2">METRO FLAGSHIP HQ</h3>
+                        <p class="text-xs text-gray-400 mb-4">450 Grand Avenue, Suite 100, Metro City</p>
+                        
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-xs text-gray-300 gap-2">
+                                <i class="fa-solid fa-check text-brand-red"></i> 25,000 sq ft Weight Floor
+                            </div>
+                            <div class="flex items-center text-xs text-gray-300 gap-2">
+                                <i class="fa-solid fa-check text-brand-red"></i> Cold Plunge & Infrared Sauna
+                            </div>
+                            <div class="flex items-center text-xs text-gray-300 gap-2">
+                                <i class="fa-solid fa-check text-brand-red"></i> Free Member Parking
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="showToast('Location Selected: Metro Flagship HQ')" class="w-full py-2.5 bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-neon">
+                        Get Day Pass
+                    </button>
+                </div>
+
+                <!-- Location Item 2 -->
+                <div class="location-card bg-brand-card rounded-2xl border border-brand-cardBorder p-6 flex flex-col justify-between hover:border-brand-red transition-all shadow-card">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold uppercase px-2.5 py-1 rounded bg-brand-red/10 text-brand-red border border-brand-red/20">24/7 OPEN</span>
+                            <span class="text-xs text-gray-400"><i class="fa-solid fa-location-dot text-brand-red mr-1"></i> Westside District</span>
+                        </div>
+                        <h3 class="font-display text-2xl text-white mb-2">WESTSIDE POWER LAB</h3>
+                        <p class="text-xs text-gray-400 mb-4">882 West Boulevard, Industrial Zone</p>
+                        
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-xs text-gray-300 gap-2">
+                                <i class="fa-solid fa-check text-brand-red"></i> Eleiko Competition Racks
+                            </div>
+                            <div class="flex items-center text-xs text-gray-300 gap-2">
+                                <i class="fa-solid fa-check text-brand-red"></i> Boxing Ring & Bag Zone
+                            </div>
+                            <div class="flex items-center text-xs text-gray-300 gap-2">
+                                <i class="fa-solid fa-check text-brand-red"></i> On-site Physical Therapy
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="showToast('Location Selected: Westside Power Lab')" class="w-full py-2.5 bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-neon">
+                        Get Day Pass
+                    </button>
+                </div>
+
+                <!-- Location Item 3 -->
+                <div class="location-card bg-brand-card rounded-2xl border border-brand-cardBorder p-6 flex flex-col justify-between hover:border-brand-red transition-all shadow-card">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold uppercase px-2.5 py-1 rounded bg-brand-red/10 text-brand-red border border-brand-red/20">24/7 OPEN</span>
+                            <span class="text-xs text-gray-400"><i class="fa-solid fa-location-dot text-brand-red mr-1"></i> Northside Hub</span>
+                        </div>
+                        <h3 class="font-display text-2xl text-white mb-2">NORTHSIDE ATHLETIC</h3>
+                        <p class="text-xs text-gray-400 mb-4">1204 Northline Highway, North District</p>
+                        
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-xs text-gray-300 gap-2">
+                                <i class="fa-solid fa-check text-brand-red"></i> Turf Conditioning Track
+                            </div>
+                            <div class="flex items-center text-xs text-gray-300 gap-2">
+                                <i class="fa-solid fa-check text-brand-red"></i> Smoothie & Fuel Bar
+                            </div>
+                            <div class="flex items-center text-xs text-gray-300 gap-2">
+                                <i class="fa-solid fa-check text-brand-red"></i> Private Locker Rooms
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="showToast('Location Selected: Northside Athletic')" class="w-full py-2.5 bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-neon">
+                        Get Day Pass
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="py-24 bg-black relative z-10 border-t border-brand-cardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-red font-bold text-xs uppercase tracking-[0.2em] block mb-2">MEMBERSHIP OPTIONS</span>
+                <h2 class="font-display text-4xl sm:text-6xl text-white uppercase tracking-tight mb-4">
+                    CHOOSE YOUR <span class="text-brand-red">LEVEL</span>
+                </h2>
+                <p class="text-gray-400 text-sm">
+                    No hidden maintenance fees. Cancel anytime. Unlocks full access to our high-performance facility.
+                </p>
+            </div>
+
+            <!-- Pricing Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Plan 1: Day Pass -->
+                <div class="bg-brand-card border border-brand-cardBorder rounded-3xl p-8 flex flex-col justify-between hover:border-white/30 transition-all">
+                    <div>
+                        <span class="text-xs font-bold uppercase text-gray-400 tracking-widest">DAY PASS</span>
+                        <div class="mt-4 mb-6">
+                            <span class="font-display text-5xl text-white">$25</span>
+                            <span class="text-gray-400 text-xs"> / single pass</span>
+                        </div>
+                        <p class="text-gray-400 text-xs mb-6">Ideal for travelers or those testing out the facility before committing.</p>
+                        
+                        <ul class="space-y-3 mb-8 text-xs text-gray-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-red"></i> Full 24-Hour Gym Access</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-red"></i> Access to Main Lifting Floor</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-red"></i> Locker Room & Showers</li>
+                            <li class="flex items-center gap-3 opacity-40"><i class="fa-solid fa-xmark"></i> Group Classes Included</li>
+                            <li class="flex items-center gap-3 opacity-40"><i class="fa-solid fa-xmark"></i> Recovery & Sauna Access</li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openModal('membershipModal')" class="w-full py-3 bg-brand-dark hover:bg-white/10 text-white font-bold text-xs uppercase tracking-wider rounded-xl border border-white/20 transition-all">
+                        Buy Single Pass
+                    </button>
+                </div>
+
+                <!-- Plan 2: Pro Member (Featured) -->
+                <div class="bg-brand-card border-2 border-brand-red rounded-3xl p-8 flex flex-col justify-between relative shadow-neon transform md:-translate-y-2">
+                    <!-- Badge -->
+                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-brand-red text-white text-[10px] font-black uppercase tracking-widest px-4 py-1 rounded-full shadow-neon">
+                        MOST POPULAR
+                    </div>
+
+                    <div>
+                        <span class="text-xs font-bold uppercase text-brand-red tracking-widest">PRO ACCESS</span>
+                        <div class="mt-4 mb-6">
+                            <span class="font-display text-6xl text-white">$69</span>
+                            <span class="text-gray-400 text-xs"> / month</span>
+                        </div>
+                        <p class="text-gray-400 text-xs mb-6">Everything you need to build consistency and achieve maximum progress.</p>
+                        
+                        <ul class="space-y-3 mb-8 text-xs text-gray-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-red"></i> 24/7 Access to ALL 18+ Locations</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-red"></i> Unlimited Group Fitness Classes</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-red"></i> Complimentary Body Comp Scan</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-red"></i> 1 Free Personal Training Session</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-red"></i> Infrared Sauna & Cold Plunge</li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openModal('membershipModal')" class="w-full py-3.5 bg-brand-red hover:bg-brand-redDark text-white font-black text-xs uppercase tracking-wider rounded-xl transition-all shadow-neon">
+                        Get Started Now
+                    </button>
+                </div>
+
+                <!-- Plan 3: VIP Elite -->
+                <div class="bg-brand-card border border-brand-cardBorder rounded-3xl p-8 flex flex-col justify-between hover:border-white/30 transition-all">
+                    <div>
+                        <span class="text-xs font-bold uppercase text-gray-400 tracking-widest">VIP ELITE</span>
+                        <div class="mt-4 mb-6">
+                            <span class="font-display text-5xl text-white">$129</span>
+                            <span class="text-gray-400 text-xs"> / month</span>
+                        </div>
+                        <p class="text-gray-400 text-xs mb-6">For serious lifters who demand 1-on-1 coaching support and premium amenities.</p>
+                        
+                        <ul class="space-y-3 mb-8 text-xs text-gray-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-red"></i> All Pro Access Benefits</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-red"></i> 4 PT Sessions Included / Month</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-red"></i> Priority Class Reservations</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-red"></i> Free Guest Pass Every Month</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-red"></i> Customized Nutrition Macro Plan</li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openModal('membershipModal')" class="w-full py-3 bg-brand-dark hover:bg-white/10 text-white font-bold text-xs uppercase tracking-wider rounded-xl border border-white/20 transition-all">
+                        Join VIP Elite
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FRANCHISE SECTION -->
+    <section id="franchise" class="py-24 bg-brand-dark relative z-10 border-t border-brand-cardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-brand-card via-brand-dark to-brand-card border border-brand-cardBorder rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                    
+                    <div class="lg:col-span-7">
+                        <span class="text-brand-red font-bold text-xs uppercase tracking-[0.2em] block mb-2">BUSINESS OPPORTUNITY</span>
+                        <h2 class="font-display text-4xl sm:text-6xl text-white uppercase tracking-tight mb-4">
+                            FRANCHISE WITH <span class="text-brand-red">FIT RED</span>
+                        </h2>
+                        <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                            Own a high-margin, high-retention fitness business in the fastest growing strength segment. We provide turnkey facility engineering, equipment sourcing, operational playbook, and marketing support.
+                        </p>
+
+                        <div class="grid grid-cols-3 gap-4 mb-8">
+                            <div class="bg-black/50 p-4 rounded-xl border border-white/10 text-center">
+                                <div class="font-display text-2xl text-brand-red">38%</div>
+                                <div class="text-[10px] text-gray-400 uppercase font-semibold">Avg EBITDA Margin</div>
+                            </div>
+                            <div class="bg-black/50 p-4 rounded-xl border border-white/10 text-center">
+                                <div class="font-display text-2xl text-white">12 MOS</div>
+                                <div class="text-[10px] text-gray-400 uppercase font-semibold">Avg ROI Timeline</div>
+                            </div>
+                            <div class="bg-black/50 p-4 rounded-xl border border-white/10 text-center">
+                                <div class="font-display text-2xl text-brand-red">100%</div>
+                                <div class="text-[10px] text-gray-400 uppercase font-semibold">Turnkey Support</div>
+                            </div>
+                        </div>
+
+                        <button onclick="openModal('franchiseModal')" class="bg-brand-red hover:bg-brand-redDark text-white font-bold px-8 py-3.5 rounded-xl text-sm uppercase tracking-wider shadow-neon transition-all">
+                            Request Franchise Info Kit
+                        </button>
+                    </div>
+
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="w-full max-w-sm glass-panel p-6 rounded-2xl border border-brand-red/30 text-center">
+                            <i class="fa-solid fa-chart-line text-4xl text-brand-red mb-3"></i>
+                            <h3 class="font-display text-2xl text-white mb-1">BECOME A CLUB OWNER</h3>
+                            <p class="text-xs text-gray-400 mb-4">Available territories in US, UK, Australia, and Singapore.</p>
+                            <div class="text-xs font-semibold text-gray-300 bg-brand-dark p-3 rounded-xl border border-white/5">
+                                Minimum Capital Req: $150,000 Liquid
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-black relative z-10 border-t border-brand-cardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Info Column -->
+                <div class="lg:col-span-5">
+                    <span class="text-brand-red font-bold text-xs uppercase tracking-[0.2em] block mb-2">GET IN TOUCH</span>
+                    <h2 class="font-display text-4xl sm:text-6xl text-white uppercase tracking-tight mb-6">
+                        CONNECT WITH <span class="text-brand-red">OUR TEAM</span>
+                    </h2>
+                    <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                        Have questions regarding memberships, corporate packages, or personal training? Drop us a message or visit any of our clubs.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-card border border-brand-cardBorder flex items-center justify-center text-brand-red">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase font-semibold">Call Us Direct</div>
+                                <div class="text-sm font-bold text-white">+1 (800) 555-FITRED</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-card border border-brand-cardBorder flex items-center justify-center text-brand-red">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase font-semibold">Email Support</div>
+                                <div class="text-sm font-bold text-white">support@fitredgym.com</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-card border border-brand-cardBorder flex items-center justify-center text-brand-red">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase font-semibold">Front Desk Hours</div>
+                                <div class="text-sm font-bold text-white">Mon - Sun: 6:00 AM - 10:00 PM (Keycard 24/7)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7">
+                    <form onsubmit="handleContactSubmit(event)" class="bg-brand-card border border-brand-cardBorder p-8 rounded-3xl space-y-4 shadow-card">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-gray-400 mb-1">First Name</label>
+                                <input type="text" required class="w-full bg-brand-dark border border-brand-cardBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Last Name</label>
+                                <input type="text" required class="w-full bg-brand-dark border border-brand-cardBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red" placeholder="Doe">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Email Address</label>
+                                <input type="email" required class="w-full bg-brand-dark border border-brand-cardBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red" placeholder="john@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Preferred Location</label>
+                                <select class="w-full bg-brand-dark border border-brand-cardBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                                    <option>Metro Flagship HQ</option>
+                                    <option>Westside Power Lab</option>
+                                    <option>Northside Athletic</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Message</label>
+                            <textarea rows="4" required class="w-full bg-brand-dark border border-brand-cardBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red" placeholder="Tell us how we can help..."></placeholder="Tell us how we can help..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-neon">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- READY TO GET STRONGER CTA BANNER -->
+    <section class="py-20 bg-gradient-to-r from-red-950 via-brand-dark to-red-950 border-t border-brand-cardBorder relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+            <h2 class="font-display text-5xl sm:text-7xl text-white uppercase tracking-tight mb-4">
+                READY TO GET <span class="text-brand-red glow-text">STRONGER?</span>
+            </h2>
+            <p class="text-gray-300 text-sm max-w-xl mx-auto mb-8">
+                Stop waiting for next Monday. Join thousands of members who changed their bodies and minds with FIT RED.
+            </p>
+            <button onclick="openModal('membershipModal')" class="bg-brand-red hover:bg-brand-redDark text-white font-black px-10 py-4 rounded-xl text-base uppercase tracking-wider shadow-neon transition-all transform hover:scale-105">
+                JOIN GYM TODAY
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-16 border-t border-brand-cardBorder text-gray-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
+                
+                <!-- Brand Info -->
+                <div class="md:col-span-2 space-y-4">
+                    <a href="#" class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-brand-red rounded flex items-center justify-center text-black font-black text-lg">
+                            <i class="fa-solid fa-dumbbell"></i>
+                        </div>
+                        <span class="font-display text-2xl text-white tracking-wider">FIT<span class="text-brand-red">RED</span></span>
+                    </a>
+                    <p class="text-gray-400 text-xs max-w-sm leading-relaxed">
+                        High performance gym and training facility built for serious progress. Premier weight rooms, world-class coaching, and 24/7 access.
+                    </p>
+                    <div class="flex space-x-4 text-gray-400 text-base">
+                        <a href="#" class="hover:text-brand-red transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-brand-red transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="hover:text-brand-red transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="hover:text-brand-red transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation Columns -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-3">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#programs" class="hover:text-white transition-colors">Programs</a></li>
+                        <li><a href="#trainers" class="hover:text-white transition-colors">Trainers</a></li>
+                        <li><a href="#schedule" class="hover:text-white transition-colors">Class Schedule</a></li>
+                        <li><a href="#locations" class="hover:text-white transition-colors">Locations</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-3">Opportunities</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#franchise" class="hover:text-white transition-colors">Franchise Info</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors">Membership Plans</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Corporate Pass</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-3">Newsletter</h4>
+                    <p class="text-[11px] text-gray-400 mb-3">Get weekly fitness protocols and club updates.</p>
+                    <form onsubmit="handleNewsletter(event)" class="space-y-2">
+                        <input type="email" required placeholder="Your email..." class="w-full bg-brand-card border border-brand-cardBorder rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-red">
+                        <button type="submit" class="w-full bg-brand-red text-white font-bold py-2 rounded-lg text-xs uppercase hover:bg-brand-redDark transition-colors">Subscribe</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-brand-cardBorder flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-500">
+                <div>&copy; 2026 FIT RED Gym. All Rights Reserved. Built Different.</div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-300">Terms of Service</a>
+                    <a href="#" class="hover:text-gray-300">Waiver</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+
+    <!-- Modal 1: Membership Signup Modal -->
+    <div id="membershipModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="bg-brand-card border border-brand-cardBorder w-full max-w-lg rounded-3xl p-8 relative shadow-neon">
+            <button onclick="closeModal('membershipModal')" class="absolute top-6 right-6 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="font-display text-3xl text-white mb-2">JOIN THE <span class="text-brand-red">FIT RED</span> CLUB</h3>
+            <p class="text-xs text-gray-400 mb-6">Complete your registration to unlock 24/7 access to all facilities.</p>
+
+            <form onsubmit="handleModalForm(event, 'Welcome to FIT RED! Check your email for membership confirmation.')" class="space-y-4">
+                <div>
+                    <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Full Name</label>
+                    <input type="text" required class="w-full bg-brand-dark border border-brand-cardBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Email</label>
+                    <input type="email" required class="w-full bg-brand-dark border border-brand-cardBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Select Membership Plan</label>
+                    <select class="w-full bg-brand-dark border border-brand-cardBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red">
+                        <option>Pro Access Pass ($69/mo)</option>
+                        <option>VIP Elite ($129/mo)</option>
+                        <option>Day Pass ($25/day)</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-neon mt-2">
+                    Complete Registration
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 2: Session / Trainer Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="bg-brand-card border border-brand-cardBorder w-full max-w-lg rounded-3xl p-8 relative shadow-neon">
+            <button onclick="closeModal('bookingModal')" class="absolute top-6 right-6 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="font-display text-3xl text-white mb-1">BOOK SESSION WITH <span id="trainerModalName" class="text-brand-red">COACH</span></h3>
+            <p class="text-xs text-gray-400 mb-6">Select your preferred date and time slot for 1-on-1 assessment.</p>
+
+            <form onsubmit="handleModalForm(event, 'Session Booked Successfully! Coach will reach out within 2 hours.')" class="space-y-4">
+                <div>
+                    <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Your Name</label>
+                    <input type="text" required class="w-full bg-brand-dark border border-brand-cardBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Preferred Date</label>
+                    <input type="date" required class="w-full bg-brand-dark border border-brand-cardBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red">
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-neon mt-2">
+                    Confirm Session Slot
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 3: Franchise Inquiry Modal -->
+    <div id="franchiseModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="bg-brand-card border border-brand-cardBorder w-full max-w-lg rounded-3xl p-8 relative shadow-neon">
+            <button onclick="closeModal('franchiseModal')" class="absolute top-6 right-6 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="font-display text-3xl text-white mb-1">FRANCHISE <span class="text-brand-red">INQUIRY</span></h3>
+            <p class="text-xs text-gray-400 mb-6">Receive our complete 2026 Franchise Information Kit & Financial Blueprint.</p>
+
+            <form onsubmit="handleModalForm(event, 'Franchise kit requested! Our development manager will contact you.')" class="space-y-4">
+                <div>
+                    <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Name</label>
+                    <input type="text" required class="w-full bg-brand-dark border border-brand-cardBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Phone Number</label>
+                    <input type="tel" required class="w-full bg-brand-dark border border-brand-cardBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Target Location/City</label>
+                    <input type="text" required class="w-full bg-brand-dark border border-brand-cardBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red">
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-neon mt-2">
+                    Request Info Package
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 4: Program Details Modal -->
+    <div id="programModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="bg-brand-card border border-brand-cardBorder w-full max-w-lg rounded-3xl p-8 relative shadow-neon">
+            <button onclick="closeModal('programModal')" class="absolute top-6 right-6 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 id="progModalTitle" class="font-display text-3xl text-white mb-3">PROGRAM <span class="text-brand-red">NAME</span></h3>
+            <p id="progModalDesc" class="text-sm text-gray-300 leading-relaxed mb-6">Program details description here...</p>
+            <button onclick="closeModal('programModal'); openModal('membershipModal');" class="w-full py-3.5 bg-brand-red hover:bg-brand-redDark text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-neon">
+                Claim Free Trial Class
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 pointer-events-none"></div>
+
+    <script>
+        // Data for Timetable / Schedule
+        const scheduleData = {
+            mon: [
+                { time: '06:00 AM', name: 'Powerlifting & Heavy Compound', coach: 'Victor Vance', spots: '3 Spots Left' },
+                { time: '08:30 AM', name: 'High Burn Fat Loss HIIT', coach: 'Elena Rostova', spots: '5 Spots Left' },
+                { time: '12:00 PM', name: 'Lunch Hour Express Conditioning', coach: 'Marcus Sterling', spots: 'Open' },
+                { time: '05:30 PM', name: 'Boxing & Athletic Drills', coach: 'Marcus Sterling', spots: 'Almost Full' },
+                { time: '07:00 PM', name: 'Hypertrophy Upper Body Split', coach: 'Sarah Jenkins', spots: 'Open' }
+            ],
+            tue: [
+                { time: '06:00 AM', name: 'Conditioning & Kettlebell Flow', coach: 'Elena Rostova', spots: 'Open' },
+                { time: '09:00 AM', name: 'Leg Day Hypertrophy Focus', coach: 'Victor Vance', spots: '4 Spots Left' },
+                { time: '05:00 PM', name: 'Core & Mobility Restoration', coach: 'Sarah Jenkins', spots: 'Open' },
+                { time: '06:30 PM', name: 'Heavy Bag Combat Conditioning', coach: 'Marcus Sterling', spots: '2 Spots Left' }
+            ],
+            wed: [
+                { time: '06:00 AM', name: 'Barbell Deadlift & Pull Special', coach: 'Victor Vance', spots: 'Open' },
+                { time: '08:30 AM', name: 'Fat Loss Boot Camp', coach: 'Elena Rostova', spots: 'Open' },
+                { time: '06:00 PM', name: 'Endurance Metabolic Burn', coach: 'Marcus Sterling', spots: '3 Spots Left' }
+            ],
+            thu: [
+                { time: '06:00 AM', name: 'Shoulder & Arms Hypertrophy', coach: 'Sarah Jenkins', spots: 'Open' },
+                { time: '09:00 AM', name: 'HIIT & Sprint Interval', coach: 'Elena Rostova', spots: 'Open' },
+                { time: '06:00 PM', name: 'Powerlifting Technical Lab', coach: 'Victor Vance', spots: '2 Spots Left' }
+            ],
+            fri: [
+                { time: '06:00 AM', name: 'Full Body Compound Pump', coach: 'Victor Vance', spots: 'Open' },
+                { time: '08:30 AM', name: 'Combat Boxing Fitness', coach: 'Marcus Sterling', spots: 'Open' },
+                { time: '05:30 PM', name: 'Friday Night Heavy Metal Lift', coach: 'Sarah Jenkins', spots: 'Almost Full' }
+            ],
+            sat: [
+                { time: '08:00 AM', name: 'Weekend Warrior Boot Camp', coach: 'Elena Rostova', spots: 'Open' },
+                { time: '10:00 AM', name: 'Strength & Conditioning Open Lab', coach: 'Victor Vance', spots: 'Open' }
+            ],
+            sun: [
+                { time: '09:00 AM', name: 'Active Recovery & Mobility', coach: 'Sarah Jenkins', spots: 'Open' },
+                { time: '11:00 AM', name: 'Open Gym Technical Work', coach: 'Staff', spots: 'Open' }
+            ]
+        };
+
+        // Render Schedule for day
+        function renderSchedule(dayKey) {
+            const container = document.getElementById('schedule-container');
+            const items = scheduleData[dayKey] || [];
+
+            container.innerHTML = items.map(item => `
+                <div class="p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/5 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <div class="font-display text-xl text-brand-red w-24">${item.time}</div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">${item.name}</h4>
+                            <p class="text-xs text-gray-400">Coach: <span class="text-gray-200 font-semibold">${item.coach}</span></p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="text-xs px-3 py-1 rounded-full bg-brand-dark border border-brand-cardBorder text-gray-300 font-medium">${item.spots}</span>
+                        <button onclick="showToast('Class Reserved: ${item.name} at ${item.time}')" class="px-4 py-2 bg-brand-red hover:bg-brand-redDark text-white text-xs font-bold uppercase rounded-lg shadow-neon transition-all">
+                            Book Spot
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Switch Day tab
+        function switchDay(dayKey) {
+            document.querySelectorAll('.day-tab').forEach(btn => {
+                btn.classList.remove('active', 'bg-brand-red', 'text-white');
+                btn.classList.add('bg-brand-card', 'text-gray-400');
+            });
+            event.target.classList.add('active', 'bg-brand-red', 'text-white');
+            event.target.classList.remove('bg-brand-card', 'text-gray-400');
+            renderSchedule(dayKey);
+        }
+
+        // Filter Programs
+        function filterPrograms(category) {
+            document.querySelectorAll('.prog-filter-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-brand-red', 'text-white');
+                btn.classList.add('bg-brand-card', 'text-gray-400');
+            });
+            event.currentTarget.classList.add('active', 'bg-brand-red', 'text-white');
+            event.currentTarget.classList.remove('bg-brand-card', 'text-gray-400');
+
+            const cards = document.querySelectorAll('.program-card');
+            cards.forEach(card => {
+                if(category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Filter Locations Search
+        function filterLocations() {
+            const query = document.getElementById('locationSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('.location-card');
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                card.style.display = text.includes(query) ? 'flex' : 'none';
+            });
+        }
+
+        // Modal triggers
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        function openBookingModal(trainerName) {
+            document.getElementById('trainerModalName').innerText = trainerName.toUpperCase();
+            openModal('bookingModal');
+        }
+
+        function showProgramDetail(title, desc) {
+            document.getElementById('progModalTitle').innerText = title.toUpperCase();
+            document.getElementById('progModalDesc').innerText = desc;
+            openModal('programModal');
+        }
+
+        // Form handlers with Toast feedback
+        function handleModalForm(e, message) {
+            e.preventDefault();
+            const modal = e.target.closest('.fixed');
+            if (modal) modal.classList.add('hidden');
+            e.target.reset();
+            showToast(message);
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            e.target.reset();
+            showToast('Thank you! Our fitness team will contact you shortly.');
+        }
+
+        function handleNewsletter(e) {
+            e.preventDefault();
+            e.target.reset();
+            showToast('Subscribed! Check your inbox for your 10% discount pass.');
+        }
+
+        // Custom Toast Notification System
+        function showToast(msg) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'pointer-events-auto bg-brand-card border border-brand-red text-white text-xs font-bold px-5 py-3.5 rounded-xl shadow-neon flex items-center gap-3 transition-all transform translate-y-2 opacity-0';
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-brand-red text-base"></i><span>${msg}</span>`;
+            
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 10);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
+
+        // Mobile Navigation Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Initialize default schedule on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderSchedule('mon');
+        });
+    </script>
+</body>
+</html>
