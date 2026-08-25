@@ -12,13 +12,13 @@ export default function Hero() {
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
         {/* Mobile Background */}
         <img
-          src="/mobile-hero.png"
+          src="/mobile-hero.webp"
           alt="Hero Background Mobile"
           className="block md:hidden w-full h-full object-cover object-top"
         />
         {/* Desktop Background */}
         <img
-          src="/hero-bg-1.png"
+          src="/hero-bg-1.webp"
           alt="Hero Background Desktop"
           className="hidden md:block w-full h-full object-cover object-top"
         />
