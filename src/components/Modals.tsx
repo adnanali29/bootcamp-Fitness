@@ -48,7 +48,7 @@ export default function Modals() {
               <i className="fa-solid fa-xmark"></i>
             </button>
             <h3 className="font-display text-3xl text-white mb-2">
-              JOIN THE <span className="text-brand-red">FIT RED</span> CLUB
+              JOIN THE <span className="text-brand-red">BOOT CAMP</span> CLUB
             </h3>
             <p className="text-xs text-gray-400 mb-6">
               Complete your registration to unlock 24/7 access to all facilities.
@@ -58,7 +58,7 @@ export default function Modals() {
               onSubmit={(e) =>
                 handleModalSubmit(
                   e,
-                  "Welcome to FIT RED! Check your email for membership confirmation.",
+                  "Welcome to Boot Camp Gym! Check your email for membership confirmation.",
                   closeMembershipModal
                 )
               }

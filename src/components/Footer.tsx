@@ -120,7 +120,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-brand-cardBorder flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-500">
-          <div>&copy; {new Date().getFullYear()} FIT RED Gym. All Rights Reserved. Built Different.</div>
+          <div>&copy; {new Date().getFullYear()} Boot Camp Gym. All Rights Reserved. Built Different.</div>
           <div className="flex space-x-6">
             <a href="#" className="hover:text-gray-300">
               Privacy Policy

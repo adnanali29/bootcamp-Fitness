@@ -16,7 +16,7 @@ export default function Franchise() {
                 BUSINESS OPPORTUNITY
               </span>
               <h2 className="font-display text-4xl sm:text-6xl text-white uppercase tracking-tight mb-4">
-                FRANCHISE WITH <span className="text-brand-red">FIT RED</span>
+                FRANCHISE WITH <span className="text-brand-red">BOOT CAMP GYM</span>
               </h2>
               <p className="text-gray-300 text-sm mb-6 leading-relaxed">
                 Own a high-margin, high-retention fitness business in the fastest growing strength segment. We
